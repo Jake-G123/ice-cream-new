@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/images/Ice_Cream_Clip_Art.png">
+    <link rel="icon" href="Ice_Cream_Clip_Art.png">
     <title>Ice Cream Order</title>
-    <link rel="stylesheet" href="/styles/styles.css"> 
+    <link rel="stylesheet"href="/styles/styles.css">
+    <script src="js/ice-cream.js" defer></script>
 </head>
 <body>
     <main>
         <h1>Ice Cream Order Form</h1>
-        <form>
+        <form id="icecream-form" action="#" method="get">
             <fieldset>
                 <legend>Personal Information</legend>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name">
+                <span id="err-name" class="error">Name is empty</span>
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email">
+                <span id="err-email" class="error">emai is empty or does not contain @</span>
+
             </fieldset>
             <fieldset>
                 <legend>Order Details</legend>
                 <label for="flavor">Choose your flavor:</label>
+                <span id="err-flavor" class="error">flavor isnt selected</span>
                 <select id="flavor" name="flavor">
                     <option value="vanilla">Vanilla</option>
                     <option value="chocolate">Chocolate</option>
@@ -29,6 +34,7 @@
                     <option value="huckleberry">Huckleberry</option>
                 </select>
                 <p class="label">Choose your cone:</p> <!--Had to add label this way for proper formatting-->
+                <span id="err-cone" class="error">cone isnt selected</span>
                 <div class="inlineLabel">
                     <label for="waffle">
                         <input type="radio" id="waffle" name="method" value="waffle">Waffle cone
